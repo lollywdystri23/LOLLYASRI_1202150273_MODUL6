@@ -12,18 +12,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.android.lollyasri_1202150273_modul6.DetailPostActivity;
+import com.example.android.lollyasri_1202150273_modul6.DetailPost;
 import com.example.android.lollyasri_1202150273_modul6.R;
 import com.example.android.lollyasri_1202150273_modul6.model.Post;
 
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+public class AdapterPost extends RecyclerView.Adapter<AdapterPost.ViewHolder> {
 
     Context context;
     List<Post> postList;
 
-    public PostAdapter(Context context, List<Post> postList) {
+    public AdapterPost(Context context, List<Post> postList) {
         this.context = context;
         this.postList = postList;
     }
@@ -48,7 +48,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     }
     @NonNull
     @Override
-    public PostAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterPost.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_post,parent,false);
         return new ViewHolder(v);
@@ -71,7 +71,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         holder.cardViewPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailPostActivity.class);
+                Intent intent = new Intent(context, DetailPost.class);
                 intent.putExtra("id",post.getId());
                 intent.putExtra("Username",post.getUsername());
                 intent.putExtra("image",post.getImagePost());

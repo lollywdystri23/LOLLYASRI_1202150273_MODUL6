@@ -15,9 +15,9 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="Popotoan" />
+            android:label="Timeline" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login"
             android:label="Sign In">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,9 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddPostActivity"
+        <activity android:name=".AddPost"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".DetailPostActivity"
+        <activity android:name=".DetailPost"
             android:parentActivityName=".MainActivity" />
     </application>
 

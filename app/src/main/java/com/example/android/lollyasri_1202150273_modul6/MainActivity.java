@@ -9,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.android.lollyasri_1202150273_modul6.homeScreen.PagerAdapter;
+import com.example.android.lollyasri_1202150273_modul6.homeScreen.AdapterPager;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.mainPager);
-        final PagerAdapter adapter = new PagerAdapter
+        final AdapterPager adapter = new AdapterPager
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.setAdapter(adapter);
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.logout) {
             mAuth.signOut();
-            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this, Login.class);
             startActivity(intent);
             finish();
         }
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addPost(View view) {
-        Intent i = new Intent(MainActivity.this, AddPostActivity.class);
+        Intent i = new Intent(MainActivity.this, AddPost.class);
         startActivity(i);
     }
 }

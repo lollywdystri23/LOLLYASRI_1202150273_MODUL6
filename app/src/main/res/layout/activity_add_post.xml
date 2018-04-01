@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.android.lollyasri_1202150273_modul6.AddPostActivity">
+    tools:context="com.example.android.lollyasri_1202150273_modul6.AddPost">
 
     <RelativeLayout
         android:layout_width="match_parent"

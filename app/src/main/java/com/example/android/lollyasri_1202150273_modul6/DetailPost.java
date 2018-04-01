@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.android.lollyasri_1202150273_modul6.adapter.CommentAdapter;
+import com.example.android.lollyasri_1202150273_modul6.adapter.AdapterComment;
 import com.example.android.lollyasri_1202150273_modul6.model.Comment;
 import com.example.android.lollyasri_1202150273_modul6.model.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class DetailPostActivity extends AppCompatActivity {
+public class DetailPost extends AppCompatActivity {
 
     TextView mUsername, mTitlePost, mPost;
     ImageView mImagePost;
@@ -61,7 +61,7 @@ public class DetailPostActivity extends AppCompatActivity {
         mTitlePost = findViewById(R.id.tv_title_post);
         mPost = findViewById(R.id.tv_post);
 
-        Glide.with(DetailPostActivity.this).load(image).into(mImagePost);
+        Glide.with(DetailPost.this).load(image).into(mImagePost);
 
         et_comment = findViewById(R.id.et_comment);
 
@@ -85,10 +85,10 @@ public class DetailPostActivity extends AppCompatActivity {
 
                     Comment track = new Comment(id, user.getUsername(), textReview,(0-timestamp));
                     databaseComments.child(id).setValue(track);
-                    Toast.makeText(DetailPostActivity.this, "Comment Sent", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DetailPost.this, "Comment Sent", Toast.LENGTH_LONG).show();
                     et_comment.setText("");
                 } else {
-                    Toast.makeText(DetailPostActivity.this, "Please enter Comment", Toast.LENGTH_LONG).show();
+                    Toast.makeText(DetailPost.this, "Enter Comment", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -117,9 +117,9 @@ public class DetailPostActivity extends AppCompatActivity {
                 }
                 recyclerView.setHasFixedSize(true);
 
-                recyclerView.setLayoutManager(new GridLayoutManager(DetailPostActivity.this, 1));
+                recyclerView.setLayoutManager(new GridLayoutManager(DetailPost.this, 1));
 
-                CommentAdapter commentList = new CommentAdapter(DetailPostActivity.this, listComments);
+                AdapterComment commentList = new AdapterComment(DetailPost.this, listComments);
 
                 recyclerView.setAdapter(commentList);
             }

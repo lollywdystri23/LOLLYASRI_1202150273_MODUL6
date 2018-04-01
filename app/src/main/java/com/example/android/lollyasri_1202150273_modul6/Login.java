@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class LoginActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private static final String TAG = "Authentication Email";
     TextInputLayout mEmail, mPassword;
@@ -50,8 +50,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (validateForm()) {
                     signIn(email, password);
+                    Toast.makeText(Login.this, "Login Success",
+                            Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, "Please Fill the Form",
+                    Toast.makeText(Login.this, "Login Failed",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -66,8 +68,10 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (validateForm()) {
                     createAccount(email, password);
+                    Toast.makeText(Login.this, "Registrasi Success",
+                            Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(LoginActivity.this, "Please Fill the Form",
+                    Toast.makeText(Login.this, "Regis Failed",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -95,10 +99,10 @@ public class LoginActivity extends AppCompatActivity {
                             String[] username = email.split("@");
                             User user = new User(id, username[0], email);
                             databaseUser.child(id).setValue(user);
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent i = new Intent(Login.this, MainActivity.class);
                             startActivity(i);
                         } else {
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
+                            Toast.makeText(Login.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -114,11 +118,12 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent i = new Intent(Login.this, MainActivity.class);
                             startActivity(i);
+                            Toast.makeText(Login.this, "Login Success",
+                                    Toast.LENGTH_SHORT).show();
                         } else {
-
-                            Toast.makeText(LoginActivity.this, "Akun Belum Terdaftar",
+                            Toast.makeText(Login.this, "Login Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -139,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendToMain() {
-        Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
+        Intent mainIntent = new Intent(Login.this, MainActivity.class);
         startActivity(mainIntent);
         finish();
     }

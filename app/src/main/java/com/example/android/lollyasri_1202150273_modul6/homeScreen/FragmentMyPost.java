@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.android.lollyasri_1202150273_modul6.MainActivity;
 import com.example.android.lollyasri_1202150273_modul6.R;
-import com.example.android.lollyasri_1202150273_modul6.adapter.PostAdapter;
+import com.example.android.lollyasri_1202150273_modul6.adapter.AdapterPost;
 import com.example.android.lollyasri_1202150273_modul6.model.Post;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -66,7 +66,7 @@ public class FragmentMyPost extends Fragment {
 
                 recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
-                PostAdapter postList = new PostAdapter(getContext(), listPosts);
+                AdapterPost postList = new AdapterPost(getContext(), listPosts);
 
                 recyclerView.setAdapter(postList);
             }

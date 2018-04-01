@@ -28,7 +28,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 
-public class AddPostActivity extends AppCompatActivity {
+public class AddPost extends AppCompatActivity {
 
     private static final int PICK_IMAGE = 1;
 
@@ -105,18 +105,18 @@ public class AddPostActivity extends AppCompatActivity {
                                 databaseFood.child(id).setValue(post);
 
                             } else {
-                                Toast.makeText(AddPostActivity.this, "Error : " + uploadTask.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                Toast.makeText(AddPost.this, "Error : " + uploadTask.getException().getMessage(), Toast.LENGTH_LONG).show();
                             }
                         }
                     });
 
                     //displaying a success toast
-                    Toast.makeText(AddPostActivity.this, "Uploaded", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(AddPostActivity.this, MainActivity.class);
+                    Toast.makeText(AddPost.this, "Uploaded", Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(AddPost.this, MainActivity.class);
                     startActivity(i);
                 } else {
                     //if the value is not given displaying a toast
-                    Toast.makeText(AddPostActivity.this, "Please Fill the form and choose image", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddPost.this, "Fill the form and choose image", Toast.LENGTH_LONG).show();
                 }
             }
 

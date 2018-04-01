@@ -46,13 +46,14 @@
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/margin_8" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/margin_8"
-            android:onClick="addComment"
-            android:text="Write Comment" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_8"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="addComment"
+        android:text="Write Comment" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerViewComment"

@@ -14,13 +14,13 @@ import com.example.android.lollyasri_1202150273_modul6.model.Comment;
 
 import java.util.List;
 
-public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHolder> {
+public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHolder> {
 
     Context context;
     List<Comment> commentList;
 //    RoundedBitmapDrawable rounded;
 
-    public CommentAdapter(Context context, List<Comment> commentList) {
+    public AdapterComment(Context context, List<Comment> commentList) {
         this.context = context;
         this.commentList = commentList;
     }
@@ -39,7 +39,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
 
     @NonNull
     @Override
-    public CommentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterComment.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.layout_comment,parent,false);
         return new ViewHolder(v);
