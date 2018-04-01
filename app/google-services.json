@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "427036880539",
+    "firebase_url": "https://lollyasri1202150273modul6.firebaseio.com",
+    "project_id": "lollyasri1202150273modul6",
+    "storage_bucket": "lollyasri1202150273modul6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:427036880539:android:404f7bf52316cc1d",
+        "android_client_info": {
+          "package_name": "com.example.android.lollyasri_1202150273_modul6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "427036880539-qam5mck3erkkr155f9bd3ifvulapkdcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.lollyasri_1202150273_modul6",
+            "certificate_hash": "63b91c212e941c421cef268389b83c1678efd9cc"
+          }
+        },
+        {
+          "client_id": "427036880539-pl9ug4f2ou0ht9kpv0lr3rksffk22ut0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZCFyBhuyoNU2y19WQfhVHjrIH2ajcWcQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "427036880539-pl9ug4f2ou0ht9kpv0lr3rksffk22ut0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
